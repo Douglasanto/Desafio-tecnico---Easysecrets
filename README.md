@@ -51,12 +51,6 @@ npm install  # Instala dependências
 npm run dev  # Inicia servidor local
 ```
 
-#### Variáveis de Ambiente
-Crie um arquivo `.env` na raiz com:
-```
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
-```
-
 ---
 
 ## 🧠 Decisões Técnicas
@@ -143,7 +137,6 @@ Configuração pronta para:
 ```
 /src
   /app                  # Rotas da aplicação (Next.js App Router)
-    /api                # Endpoints API (se aplicável)
   
   /components           # Componentes reutilizáveis
     /charts             # Componentes de gráficos
@@ -163,4 +156,3 @@ Configuração pronta para:
     /animations         # Animações Lottie
     /images             # Imagens estáticas
 ```
-

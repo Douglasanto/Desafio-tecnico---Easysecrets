@@ -28,55 +28,139 @@ npm run dev
 yarn dev
 ```
 
+Acesse: http://localhost:3000
+
+### 🏗️ Build para produção
 ```bash
-http://localhost:3000
+npm run build
+npm run start
+# ou
+yarn build
+yarn start
 ```
+
+---
+
+## 📋 Documentação Técnica
+
+### 🚀 Instruções para Execução
+
+#### Ambiente de Desenvolvimento
+```bash
+npm install  # Instala dependências
+npm run dev  # Inicia servidor local
+```
+
+#### Variáveis de Ambiente
+Crie um arquivo `.env` na raiz com:
+```
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+---
 
 ## 🧠 Decisões Técnicas
 
-### 🧱 Framework  
-**Next.js**  
-Utilizado como base do projeto por oferecer renderização híbrida (SSR + SSG), roteamento automático e excelente performance.
+### 🧱 Stack Principal  
+- **Next.js** (App Router)  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **shadcn/ui** (Componentes UI)  
 
-### 🟦 Linguagem  
-**TypeScript**  
-Adotado para trazer tipagem estática, melhor manutenção e segurança durante o desenvolvimento.
+### 📊 Visualização de Dados  
+- **Chart.js** + **react-chartjs-2**  
+- Custom hooks para manipulação de dados  
 
-### 💨 Estilização  
-**Tailwind CSS**  
-Framework utilitário de CSS que facilita a criação de componentes estilizados e responsivos de forma rápida e eficiente.
+### 🎨 Estilização  
+- Sistema de temas claro/escuro  
+- Totalmente responsivo  
+- Animações com Lottie  
 
-### 📈 Gráficos e Visualização de Dados  
-**chart.js + react-chartjs-2**  
-Ferramentas para construção de gráficos dinâmicos e interativos.
+### 🛠️ Funcionalidades Principais  
+- Upload e visualização de dados  
+- Filtros interativos  
+- Multiplos tipos de gráficos  
+- Exportação de relatórios  
 
-### 🧩 Upload de Arquivos  
-**react-dropzone**  
-Biblioteca de upload com suporte a drag-and-drop, tornando a experiência de importação de arquivos mais amigável.
+### 🏗️ Arquitetura
+- **Next.js App Router**: Para roteamento moderno e renderização híbrida
+- **Padrão Modular**: Componentes autocontidos com responsabilidades únicas
+- **Separação Clara**:
+  - UI (components/)
+  - Lógica (lib/)
+  - Dados (constants/)
 
-### ✨ Animações  
-**lottie-react**  
-Utilizado para incluir animações vetoriais de forma leve e integrada com o React, como gráficos animados no Hero Section.
+### 📚 Bibliotecas Principais
+| Biblioteca | Finalidade | Benefício |
+|------------|------------|-----------|
+| Chart.js | Visualização de dados | Performance e customização |
+| react-chartjs-2 | Integração React | Componentização dos gráficos |
+| next-themes | Gerenciamento de temas | Suporte a system preference |
+| shadcn/ui | Componentes UI | Acessibilidade e consistência |
+| lottie-react | Animações | Experiência mais rica |
 
-### 🌓 Suporte a Temas  
-**next-themes**  
-Permite alternar entre modo claro e escuro automaticamente ou via botão, com persistência da escolha.
+### 🏆 Diferenciais Implementados
+1. **Sistema de Temas Avançado**
+   - Respeita preferência do sistema
+   - Transições suaves
+   - Cores semanticamente nomeadas
 
-### 🔧 Utilitários  
-**lodash**  
-Biblioteca de utilidades usada para manipulação eficiente de arrays e objetos.
+2. **Performance Otimizada**
+   - Code splitting automático
+   - Memoização de gráficos
+   - Carregamento lazy de componentes
 
+3. **Experiência do Desenvolvedor**
+   - TypeScript estrito
+   - ESLint + Prettier padronizados
+   - Husky para pre-commit hooks
 
-## 📁 Estrutura de Pastas
+---
 
+## 🛠️ Guia de Manutenção
+
+### Adicionando Novo Tipo de Gráfico
+1. Crie componente em `/components/charts`
+2. Adicione tipo em `/types/chart-types.ts`
+3. Registre opção em `ChartSelector`
+
+### Testes
 ```bash
-.
-├── public/ 
-│   ├── animations/              
-├── src/
-│   ├── app/           
-│   ├── components/      
-│   ├── types/           
-├── tailwind.config.js   
-├── tsconfig.json        
-├── package.json         
+npm run test  # Executa testes unitários
+npm run lint  # Verifica padrões de código
+```
+
+### Deployment
+Configuração pronta para:
+- Vercel
+- Netlify
+- Docker (via `Dockerfile`)
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+/src
+  /app                  # Rotas da aplicação (Next.js App Router)
+    /api                # Endpoints API (se aplicável)
+  
+  /components           # Componentes reutilizáveis
+    /charts             # Componentes de gráficos
+    /controls           # Controles UI (filtros, botões)
+    /data               # Componentes de manipulação de dados
+    /layout             # Componentes estruturais
+  
+  /lib                  # Utilitários e helpers
+    /chart-utils        # Configurações e utilitários de gráficos
+    /data-utils         # Funções para processamento de dados
+  
+  /types                # Tipos TypeScript
+  /constants            # Dados e configurações
+    /sample-data        # Dados de exemplo
+  
+  /public               # Assets públicos
+    /animations         # Animações Lottie
+    /images             # Imagens estáticas
+```
+

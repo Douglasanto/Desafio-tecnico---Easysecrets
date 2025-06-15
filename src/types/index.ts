@@ -8,15 +8,17 @@ export type ProdutoVendas = {
     vendas: Venda[];
 }
 
+export type Dataset = {
+    label: string;
+    data: number[];
+    backgroundColor: string;
+    borderColor: string;
+    borderWidth: number;
+};
+
 export type ChartData = {
     labels: string[];
-    datasets: {
-        label: string;
-        data: number[];
-        backgroundColor: string;
-        borderColor: string;
-        borderWidth: number;
-    }[];
+    datasets: Dataset[];
 }
 
 export type ChartType = 'bar' | 'line' | 'pie' | 'doughnut' | 'radar';
@@ -27,38 +29,3 @@ export type FilterOptions = {
     mesFinal?: string;
 }
 
-export const sampleData: ProdutoVendas[] = [
-  {
-    "produto": "Refrigerante",
-    "vendas": [
-      { "mes": "Janeiro", "quantidade": 120 },
-      { "mes": "Fevereiro", "quantidade": 150 },
-      { "mes": "Março", "quantidade": 130 },
-      { "mes": "Abril", "quantidade": 170 },
-      { "mes": "Maio", "quantidade": 160 },
-      { "mes": "Junho", "quantidade": 140 }
-    ]
-  },
-  {
-    "produto": "Suco",
-    "vendas": [
-      { "mes": "Janeiro", "quantidade": 80 },
-      { "mes": "Fevereiro", "quantidade": 95 },
-      { "mes": "Março", "quantidade": 100 },
-      { "mes": "Abril", "quantidade": 90 },
-      { "mes": "Maio", "quantidade": 110 },
-      { "mes": "Junho", "quantidade": 105 }
-    ]
-  },
-  {
-    "produto": "Salgadinho",
-    "vendas": [
-      { "mes": "Janeiro", "quantidade": 60 },
-      { "mes": "Fevereiro", "quantidade": 75 },
-      { "mes": "Março", "quantidade": 70 },
-      { "mes": "Abril", "quantidade": 95 },
-      { "mes": "Maio", "quantidade": 85 },
-      { "mes": "Junho", "quantidade": 90 }
-    ]
-  }
-];

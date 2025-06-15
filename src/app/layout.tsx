@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { ThemeWrapper } from '@/components/theme-wrapper'
+import { ThemeWrapper } from '@/components/theme/theme-wrapper'
+import { ToastProvider } from '@/components/ui/use-toast'
 
 export const metadata: Metadata = {
   title: 'Visualizador de Vendas',
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang="pt-BR" suppressHydrationWarning className="light">
       <body>
         <ThemeWrapper>
-          {children}
+          <ToastProvider>
+            {children}
+          </ToastProvider>
         </ThemeWrapper>
       </body>
     </html>

@@ -14,8 +14,8 @@ Este projeto é um visualizador de dados que permite importar arquivos, analisar
 ### 📦 Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/desafio-easysecrets.git
-cd desafio-easysecrets
+git clone https://github.com/Douglasanto/Desafio-tecnico---Easysecrets.git
+cd Desafio-tecnico---Easysecrets
 npm install
 # ou
 yarn install
